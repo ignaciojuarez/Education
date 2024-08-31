@@ -11,7 +11,7 @@ import SwiftUI
 struct EducationApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GithubProfile()
         }
     }
 }
