@@ -8,75 +8,69 @@
 import Foundation
 import SwiftUI
 
-struct User: Codable {
-    let login: String
-    let avatarUrl: String
-    let bio: String
-}
-
-class GithubViewModel: ObservableObject {
-    
-    @Published var user: User? = nil
-    
-    enum GitError: Error {
+struct NetworkService {
+    enum NetworkError: Error {
         case invalidURL
         case invalidResponse
         case invalidData
     }
     
-    func fetchGitUser() async throws -> User? {
-        let endpoint = "https://api.github.com/users/ignaciojuarez"
-        
-        guard let url = URL(string: endpoint) else {
-            throw GitError.invalidURL
+    func fetch<T: Codable>(from urlString: String) async throws -> T {
+        guard let url = URL(string: urlString) else {
+            throw NetworkError.invalidURL
         }
         
-        let (data, response) =  try await URLSession.shared.data(from: url)
+        let (data, response) = try await URLSession.shared.data(from: url)
         
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw GitError.invalidResponse
+            throw NetworkError.invalidResponse
         }
         
         do {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            return try decoder.decode(User.self, from: data)
+            return try decoder.decode(T.self, from: data)
         }
         catch {
-            throw GitError.invalidData
+            throw NetworkError.invalidData
         }
     }
 }
 
-struct GithubProfile: View {
-    @EnvironmentObject var vm: GithubViewModel
+class GitViewModel: ObservableObject {
+    @Published var gitUser: GitUser?
+    private var networkService = NetworkService()
+    
+    public func loadGitUser() async {
+        do {
+            gitUser = try await networkService.fetch(from: "https://api.github.com/users/ignaciojuarez")
+        }
+        catch {
+            
+        }
+    }
+}
+
+struct GitUser: Codable {
+    var login: String
+    var avatarUrl: String
+}
+
+struct GitView: View {
+    @StateObject private var viewModel = GitViewModel()
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: vm.user?.avatarUrl ?? "")) { image in
-                image
-                    .resizable()
-                    .mask { Circle()}
-            } placeholder: {
-                Circle()
-                    
-            }
-            .frame(width: 100, height: 100)
+            Text(viewModel.gitUser?.login ?? "Loading")
             
-            Text(vm.user?.login ?? "")
-            Text(vm.user?.bio ?? "Loading")
+            AsyncImage(url: URL(string: viewModel.gitUser?.avatarUrl ?? ""))
         }
         .task {
-            do {
-                vm.user = try await vm.fetchGitUser()
-            } catch {
-                print("Error fetching user: \(error)")
-            }
+            await viewModel.loadGitUser()
         }
     }
 }
 
 #Preview {
-    GithubProfile()
-        .environmentObject(GithubViewModel())
+    GitView()
 }

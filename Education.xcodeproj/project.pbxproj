@@ -29,6 +29,7 @@
 		4F77AE582C82AAD200D9AF21 /* ProGenericView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProGenericView.swift; sourceTree = "<group>"; };
 		4F77AE5A2C82C4E500D9AF21 /* Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generic.swift; sourceTree = "<group>"; };
 		4F77AE5C2C82C64600D9AF21 /* GenericView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericView.swift; sourceTree = "<group>"; };
+		4F77AE5E2C8410E600D9AF21 /* Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Closures.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +96,7 @@
 			children = (
 				4F68A7FE2C7EC20200131BCE /* LinkedLists.playground */,
 				4F77AE552C8285C800D9AF21 /* Testing.playground */,
+				4F77AE5E2C8410E600D9AF21 /* Closures.playground */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";

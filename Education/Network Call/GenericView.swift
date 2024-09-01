@@ -26,6 +26,32 @@ class Store: ObservableObject {
             print(recepit)
         }
     }
+    
+    // invalidResponse return error code
+    // custom headers?
+    // enum networkAction .get, .put, .delete, ...
+    //
+    func fetchNetworkCall<T: Codable>(from urlString: String) async throws -> T {
+        guard let url = URL(string: urlString) else {
+            throw HTTPError.invalidURL
+        }
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw HTTPError.invalidResponse
+        }
+        
+        do {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            return try decoder.decode(T.self, from: data)
+        }
+        catch {
+            throw HTTPError.invalidData
+        }
+        
+    }
 }
 
 // Sample SwiftUI View.

@@ -8,14 +8,14 @@
 import Foundation
 
 // Define an error type for network-related errors.
-enum NetworkError: Error {
+enum ProNetworkError: Error {
     case badRequest
     case serverError(String)
     case decodingError
     case invalidResponse
 }
 
-extension NetworkError: LocalizedError {
+extension ProNetworkError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .badRequest:
@@ -67,7 +67,7 @@ struct ProHTTPClient {
                 var urlComponents = URLComponents(url: resource.url, resolvingAgainstBaseURL: false)
                 urlComponents?.queryItems = [queryItems]
                 guard let url = urlComponents?.url else {
-                    throw NetworkError.badRequest
+                    throw ProNetworkError.badRequest
                 }
                 request = URLRequest(url: url)
             case .post(let data), .put(let data):
@@ -85,16 +85,16 @@ struct ProHTTPClient {
         
         // Ensure we have a valid HTTP response
         guard let httpResponse = response as? HTTPURLResponse else { throw
-            NetworkError.invalidResponse
+            ProNetworkError.invalidResponse
         }
         
         // Check for HTTP errors
         guard (200...299).contains(httpResponse.statusCode) else {
-            throw NetworkError.serverError("Server error with code: \(httpResponse.statusCode)")
+            throw ProNetworkError.serverError("Server error with code: \(httpResponse.statusCode)")
         }
         
         guard let result = try? JSONDecoder().decode(T.self, from: data) else {
-            throw NetworkError.decodingError
+            throw ProNetworkError.decodingError
         }
         
         return result
