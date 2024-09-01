@@ -39,14 +39,24 @@ struct NetworkService {
 
 class GitViewModel: ObservableObject {
     @Published var gitUser: GitUser?
+    @Published var followers: [GitUser] = []
     private var networkService = NetworkService()
     
     public func loadGitUser() async {
         do {
-            gitUser = try await networkService.fetch(from: "https://api.github.com/users/ignaciojuarez")
+            let gitAPI = "https://api.github.com/users/ignaciojuarez"
+            gitUser = try await networkService.fetch(from: gitAPI)
+        } catch {
+            print("Error fetching user: \(error)")
         }
-        catch {
-            
+    }
+    
+    public func loadGitFollowers() async {
+        do {
+            let followersAPI = "https://api.github.com/users/ignaciojuarez/followers"
+            followers = try await networkService.fetch(from: followersAPI)
+        } catch {
+            print("Error fetching followers: \(error)")
         }
     }
 }
@@ -60,13 +70,15 @@ struct GitView: View {
     @StateObject private var viewModel = GitViewModel()
     
     var body: some View {
-        HStack {
+        VStack {
             Text(viewModel.gitUser?.login ?? "Loading")
+            Text("followers: \(viewModel.followers.count)")
             
-            AsyncImage(url: URL(string: viewModel.gitUser?.avatarUrl ?? ""))
+            AsyncImage(url: URL(string: viewModel.gitUser?.avatarUrl ?? ""), scale: 2)
         }
         .task {
             await viewModel.loadGitUser()
+            await viewModel.loadGitFollowers()
         }
     }
 }
