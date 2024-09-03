@@ -9,94 +9,71 @@ import Foundation
 
 // Define an error type for network-related errors.
 enum ProNetworkError: Error {
-    case badRequest
-    case serverError(String)
-    case decodingError
+    case invalidURL
     case invalidResponse
+    case invalidData
 }
 
-extension ProNetworkError: LocalizedError {
-    var errorDescription: String? {
-        switch self {
-        case .badRequest:
-            return NSLocalizedString("Unable to perform request", comment: "badRequestError")
-        case .serverError(let errorMessage):
-            return NSLocalizedString(errorMessage, comment: "serverError")
-        case .decodingError:
-            return NSLocalizedString("Unable to decode successfully.", comment: "decodingError")
-        case .invalidResponse:
-            return NSLocalizedString("Invalid response", comment: "invalidResponse")
-        }
-    }
-}
-
-// HTTP Method definition for use in network requests.
-enum ProHTTPMethod {
-    case get(URLQueryItem)
-    case post(Data?)
-    case delete
-    case put(Data?)
-
-    var name: String {
-        switch self {
-        case .get:
-            return "GET"
-        case .post:
-            return "POST"
-        case .delete:
-            return "DELETE"
-        case .put:
-            return "PUT"
-        }
-    }
-}
-
-// Define a Resource type to encapsulate details needed for network requests.
-struct ProResource<T: Codable> {
-    let url: URL
-    let method: ProHTTPMethod
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+    case delete = "DELETE"
 }
 
 // HTTP Client for performing network requests.
 struct ProHTTPClient {
-    func load<T: Codable>(_ resource: ProResource<T>) async throws -> T {
-        var request = URLRequest(url: resource.url)
-        
-        switch resource.method {
-            case .get(let queryItems):
-                var urlComponents = URLComponents(url: resource.url, resolvingAgainstBaseURL: false)
-                urlComponents?.queryItems = [queryItems]
-                guard let url = urlComponents?.url else {
-                    throw ProNetworkError.badRequest
-                }
-                request = URLRequest(url: url)
-            case .post(let data), .put(let data):
-                request.httpMethod = resource.method.name
-                request.httpBody = data
-            case .delete:
-                request.httpMethod = resource.method.name
+    
+    private var encoder: JSONEncoder = JSONEncoder()
+    
+    private var headers: [String: String] = [
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    ]
+    
+    private var decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }()
+    
+    public func fetch<T: Codable>(from urlString: String) async throws -> T {
+        return try await sendRequest(urlString: urlString, method: .get, body: nil as Data?)
+    }
+    
+    public func putData<T: Codable, U: Codable>(to urlString: String, body: T) async throws -> U {
+        let data = try encoder.encode(body)
+        return try await sendRequest(urlString: urlString, method: .put, body: data)
+    }
+    
+    public func delete<T: Codable>(from urlString: String) async throws -> T {
+        return try await sendRequest(urlString: urlString, method: .delete, body: nil as Data?)
+    }
+    
+    private func sendRequest<T: Codable>(urlString: String, method: HTTPMethod, body: Data?) async throws -> T {
+        guard let url = URL(string: urlString) else {
+            throw HTTPError.invalidURL
         }
         
-        let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = ["Content-Type": "application/json"]
-        let session = URLSession(configuration: configuration)
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        request.httpBody = body
         
-        let (data, response) = try await session.data(for: request)
-        
-        // Ensure we have a valid HTTP response
-        guard let httpResponse = response as? HTTPURLResponse else { throw
-            ProNetworkError.invalidResponse
+        // Apply headers
+        for (headerField, value) in headers {
+            request.setValue(value, forHTTPHeaderField: headerField)
         }
         
-        // Check for HTTP errors
-        guard (200...299).contains(httpResponse.statusCode) else {
-            throw ProNetworkError.serverError("Server error with code: \(httpResponse.statusCode)")
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw HTTPError.invalidResponse
         }
         
-        guard let result = try? JSONDecoder().decode(T.self, from: data) else {
-            throw ProNetworkError.decodingError
+        do {
+            return try decoder.decode(T.self, from: data)
+        } catch {
+            throw HTTPError.invalidData
         }
-        
-        return result
     }
 }

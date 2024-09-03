@@ -16,26 +16,26 @@ struct Order: Codable {
 
 // Observable object for a coffee store application.
 class CoffeeStore: ObservableObject {
-    let httpClient: HTTPClient
+    let httpClient: ProHTTPClient
     private var ordersDictionary: [Int: Order] = [:]
     
     init(httpClient: HTTPClient) {
-        self.httpClient = httpClient
+        self.httpClient = ProHTTPClient()
     }
     
     var orders: [Order] {
         Array(ordersDictionary.values)
     }
     
-//    func loadOrders() async throws {
-//        let resource = Resource(url: "https://example.com/orders")
-//        let orders: [Order] = try await httpClient.load(resource)
-//        for order in orders {
-//            if let orderId = order.id {
-//                ordersDictionary[orderId] = order
-//            }
-//        }
-//    }
+    func loadOrders() async throws {
+        let urlString = "https://example.com/orders"
+        let orders: [Order] = try await httpClient.fetch(from: urlString)
+        for order in orders {
+            if let orderId = order.id {
+                ordersDictionary[orderId] = order
+            }
+        }
+    }
 }
 
 // Sample SwiftUI View.
