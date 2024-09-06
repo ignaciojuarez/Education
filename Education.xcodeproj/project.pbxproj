@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2631D6942C8BAACC004C35C6 /* Filters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Filters.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		26AA5EC72C8A3C0000D3E4B4 /* EducationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EducationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AA5EC92C8A3C0000D3E4B4 /* EducationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationTests.swift; sourceTree = "<group>"; };
 		26AA5ED02C8A3F0500D3E4B4 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 			children = (
 				26AA5EC92C8A3C0000D3E4B4 /* EducationTests.swift */,
 				26AA5EF92C8BA1D400D3E4B4 /* Protocols.playground */,
+				2631D6942C8BAACC004C35C6 /* Filters.playground */,
 			);
 			path = EducationTests;
 			sourceTree = "<group>";
