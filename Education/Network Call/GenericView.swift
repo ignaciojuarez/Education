@@ -27,6 +27,25 @@ class Store: ObservableObject {
         }
     }
     
+    func fetchMultipleURLs<T:Codable>(from urls: [String]) async -> [T] {
+        var gatheredRecepits: [T] = []
+        
+        await withTaskGroup(of: T?.self) { group in
+            for url in urls {
+                group.addTask {
+                    try? await self.fetchNetworkCall(from: url)
+                }
+            }
+            
+            for await result in group {
+                if let product = result {
+                    gatheredRecepits.append(product)
+                }
+            }
+        }
+        return gatheredRecepits
+    }
+    
     // invalidResponse return error code
     // custom headers?
     // enum networkAction .get, .put, .delete, ...
