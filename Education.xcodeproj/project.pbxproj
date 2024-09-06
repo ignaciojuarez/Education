@@ -33,6 +33,7 @@
 		26AA5EC72C8A3C0000D3E4B4 /* EducationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EducationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AA5EC92C8A3C0000D3E4B4 /* EducationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationTests.swift; sourceTree = "<group>"; };
 		26AA5ED02C8A3F0500D3E4B4 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
+		26AA5EF92C8BA1D400D3E4B4 /* Protocols.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Protocols.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		26CA026A2C7D0A19002BD091 /* Education.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Education.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CA026D2C7D0A19002BD091 /* EducationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationApp.swift; sourceTree = "<group>"; };
 		26CA02712C7D0A1A002BD091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				26AA5EC92C8A3C0000D3E4B4 /* EducationTests.swift */,
+				26AA5EF92C8BA1D400D3E4B4 /* Protocols.playground */,
 			);
 			path = EducationTests;
 			sourceTree = "<group>";

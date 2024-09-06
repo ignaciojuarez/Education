@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public struct Testing {
     //var target = 7
@@ -26,4 +27,21 @@ public struct Testing {
         return []
     }
 }
+
+//class CustomTableViewCell: UITableViewCell {
+//    @IBOutlet weak var itemLabel: UILabel!
+//    @IBOutlet weak var iconImageView: UIImageView!
+//}
+//
+//class ViewController: UITableViewController {
+//    var items: [Item] = []  // Assume 'Item' is a struct with properties 'name' and 'iconName'
+//
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomTableViewCell
+//        let item = items[indexPath.row]
+//        cell.itemLabel.text = item.name
+//        cell.iconImageView.image = UIImage(named: item.iconName)
+//        return cell
+//    }
+//}
 

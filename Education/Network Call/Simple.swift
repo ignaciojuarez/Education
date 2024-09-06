@@ -74,6 +74,10 @@ struct GitView: View {
             Text(viewModel.gitUser?.login ?? "Loading")
             Text("followers: \(viewModel.followers.count)")
             
+            ForEach(viewModel.followers, id: \.login) { follower in
+                Text(follower.login)
+            }
+            
             AsyncImage(url: URL(string: viewModel.gitUser?.avatarUrl ?? ""), scale: 2)
         }
         .task {

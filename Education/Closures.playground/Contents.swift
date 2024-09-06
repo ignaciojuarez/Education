@@ -1,5 +1,23 @@
 import UIKit
 
+
+
+// -----------------------------------
+
+struct Student {
+    var name: String
+    var score: Int
+}
+
+var students: [Student] = []
+
+var topStudentFilter: (Student) -> (Bool) = { student in
+    return student.score > 80
+}
+
+var topStudents = students.filter { $0.score > 80 }
+var topSortedStudents = topStudents.sorted { $0.score < $1.score }
+
 // -----------------------------------
 // when using 'in' in closures, the value is saved
 // without 'in' = Juarez
