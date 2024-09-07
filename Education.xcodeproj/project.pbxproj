@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		26AA5ECA2C8A3C0000D3E4B4 /* EducationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA5EC92C8A3C0000D3E4B4 /* EducationTests.swift */; };
-		26AA5ED12C8A3F0500D3E4B4 /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA5ED02C8A3F0500D3E4B4 /* Testing.swift */; };
 		26CA026E2C7D0A19002BD091 /* EducationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA026D2C7D0A19002BD091 /* EducationApp.swift */; };
 		26CA02722C7D0A1A002BD091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26CA02712C7D0A1A002BD091 /* Assets.xcassets */; };
 		26CA02752C7D0A1A002BD091 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26CA02742C7D0A1A002BD091 /* Preview Assets.xcassets */; };
@@ -17,6 +16,7 @@
 		4F77AE592C82AAD200D9AF21 /* ProGenericView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F77AE582C82AAD200D9AF21 /* ProGenericView.swift */; };
 		4F77AE5B2C82C4E500D9AF21 /* Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F77AE5A2C82C4E500D9AF21 /* Generic.swift */; };
 		4F77AE5D2C82C64600D9AF21 /* GenericView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F77AE5C2C82C64600D9AF21 /* GenericView.swift */; };
+		4FE282EE2C8BDF6B00F5B47A /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE282EC2C8BDF5E00F5B47A /* Testing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +33,6 @@
 		2631D6942C8BAACC004C35C6 /* Filters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Filters.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		26AA5EC72C8A3C0000D3E4B4 /* EducationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EducationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AA5EC92C8A3C0000D3E4B4 /* EducationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationTests.swift; sourceTree = "<group>"; };
-		26AA5ED02C8A3F0500D3E4B4 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 		26AA5EF92C8BA1D400D3E4B4 /* Protocols.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Protocols.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		26CA026A2C7D0A19002BD091 /* Education.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Education.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CA026D2C7D0A19002BD091 /* EducationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationApp.swift; sourceTree = "<group>"; };
@@ -41,12 +40,14 @@
 		26CA02742C7D0A1A002BD091 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		26CA02802C7E22B3002BD091 /* Simple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple.swift; sourceTree = "<group>"; };
 		4F68A7FE2C7EC20200131BCE /* LinkedLists.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LinkedLists.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		4F77AE552C8285C800D9AF21 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4F77AE552C8285C800D9AF21 /* Basics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Basics.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4F77AE562C82A5EC00D9AF21 /* ProGeneric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProGeneric.swift; sourceTree = "<group>"; };
 		4F77AE582C82AAD200D9AF21 /* ProGenericView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProGenericView.swift; sourceTree = "<group>"; };
 		4F77AE5A2C82C4E500D9AF21 /* Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generic.swift; sourceTree = "<group>"; };
 		4F77AE5C2C82C64600D9AF21 /* GenericView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericView.swift; sourceTree = "<group>"; };
 		4F77AE5E2C8410E600D9AF21 /* Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Closures.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4FE282EC2C8BDF5E00F5B47A /* Testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
+		4FE282EF2C8BDFBF00F5B47A /* NewProbems.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = NewProbems.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,14 +68,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		26AA5EC82C8A3C0000D3E4B4 /* EducationTests */ = {
+		26AA5EC82C8A3C0000D3E4B4 /* XCTests */ = {
 			isa = PBXGroup;
 			children = (
+				4FE282EC2C8BDF5E00F5B47A /* Testing.swift */,
 				26AA5EC92C8A3C0000D3E4B4 /* EducationTests.swift */,
-				26AA5EF92C8BA1D400D3E4B4 /* Protocols.playground */,
-				2631D6942C8BAACC004C35C6 /* Filters.playground */,
 			);
-			path = EducationTests;
+			path = XCTests;
 			sourceTree = "<group>";
 		};
 		26CA02612C7D0A19002BD091 = {
@@ -97,9 +97,10 @@
 		26CA026C2C7D0A19002BD091 /* Education */ = {
 			isa = PBXGroup;
 			children = (
-				26AA5EC82C8A3C0000D3E4B4 /* EducationTests */,
-				26AA5ED02C8A3F0500D3E4B4 /* Testing.swift */,
 				4F77AE5E2C8410E600D9AF21 /* Closures.playground */,
+				26AA5EF92C8BA1D400D3E4B4 /* Protocols.playground */,
+				2631D6942C8BAACC004C35C6 /* Filters.playground */,
+				26AA5EC82C8A3C0000D3E4B4 /* XCTests */,
 				4F68A7FF2C7EC20200131BCE /* Leetcode */,
 				26CA027B2C7D0A22002BD091 /* Network Call */,
 				26CA026D2C7D0A19002BD091 /* EducationApp.swift */,
@@ -132,8 +133,9 @@
 		4F68A7FF2C7EC20200131BCE /* Leetcode */ = {
 			isa = PBXGroup;
 			children = (
+				4F77AE552C8285C800D9AF21 /* Basics.playground */,
 				4F68A7FE2C7EC20200131BCE /* LinkedLists.playground */,
-				4F77AE552C8285C800D9AF21 /* Testing.playground */,
+				4FE282EF2C8BDFBF00F5B47A /* NewProbems.playground */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
@@ -238,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FE282EE2C8BDF6B00F5B47A /* Testing.swift in Sources */,
 				26AA5ECA2C8A3C0000D3E4B4 /* EducationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,7 +250,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F77AE5D2C82C64600D9AF21 /* GenericView.swift in Sources */,
-				26AA5ED12C8A3F0500D3E4B4 /* Testing.swift in Sources */,
 				4F77AE5B2C82C4E500D9AF21 /* Generic.swift in Sources */,
 				4F77AE592C82AAD200D9AF21 /* ProGenericView.swift in Sources */,
 				4F77AE572C82A5EC00D9AF21 /* ProGeneric.swift in Sources */,

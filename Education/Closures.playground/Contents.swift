@@ -1,8 +1,3 @@
-import UIKit
-
-
-
-// -----------------------------------
 
 struct Student {
     var name: String
