@@ -17,6 +17,7 @@
 		4F77AE5B2C82C4E500D9AF21 /* Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F77AE5A2C82C4E500D9AF21 /* Generic.swift */; };
 		4F77AE5D2C82C64600D9AF21 /* GenericView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F77AE5C2C82C64600D9AF21 /* GenericView.swift */; };
 		4FE282EE2C8BDF6B00F5B47A /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE282EC2C8BDF5E00F5B47A /* Testing.swift */; };
+		4FE282F72C8D312A00F5B47A /* OldDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE282F62C8D312A00F5B47A /* OldDispatchQueue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,10 @@
 		4F77AE5E2C8410E600D9AF21 /* Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Closures.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4FE282EC2C8BDF5E00F5B47A /* Testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 		4FE282EF2C8BDFBF00F5B47A /* NewProbems.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = NewProbems.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4FE282F22C8BEB8100F5B47A /* Concurrency.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Concurrency.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4FE282F32C8CCFCC00F5B47A /* DoTryCatch.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DoTryCatch.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4FE282F42C8CD92000F5B47A /* Tasks.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Tasks.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4FE282F62C8D312A00F5B47A /* OldDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldDispatchQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +102,9 @@
 		26CA026C2C7D0A19002BD091 /* Education */ = {
 			isa = PBXGroup;
 			children = (
+				4FE282F42C8CD92000F5B47A /* Tasks.playground */,
+				4FE282F32C8CCFCC00F5B47A /* DoTryCatch.playground */,
+				4FE282F22C8BEB8100F5B47A /* Concurrency.playground */,
 				4F77AE5E2C8410E600D9AF21 /* Closures.playground */,
 				26AA5EF92C8BA1D400D3E4B4 /* Protocols.playground */,
 				2631D6942C8BAACC004C35C6 /* Filters.playground */,
@@ -122,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				26CA02802C7E22B3002BD091 /* Simple.swift */,
+				4FE282F62C8D312A00F5B47A /* OldDispatchQueue.swift */,
 				4F77AE5A2C82C4E500D9AF21 /* Generic.swift */,
 				4F77AE5C2C82C64600D9AF21 /* GenericView.swift */,
 				4F77AE562C82A5EC00D9AF21 /* ProGeneric.swift */,
@@ -255,6 +264,7 @@
 				4F77AE572C82A5EC00D9AF21 /* ProGeneric.swift in Sources */,
 				26CA02812C7E22B3002BD091 /* Simple.swift in Sources */,
 				26CA026E2C7D0A19002BD091 /* EducationApp.swift in Sources */,
+				4FE282F72C8D312A00F5B47A /* OldDispatchQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

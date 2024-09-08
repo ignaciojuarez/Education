@@ -39,25 +39,43 @@ struct NetworkService {
 
 class GitViewModel: ObservableObject {
     @Published var gitUser: GitUser?
-    @Published var followers: [GitUser] = []
+    @Published var followers: [GitUser]? = []
     private var networkService = NetworkService()
     
-    public func loadGitUser() async {
-        do {
-            let gitAPI = "https://api.github.com/users/ignaciojuarez"
-            gitUser = try await networkService.fetch(from: gitAPI)
-        } catch {
-            print("Error fetching user: \(error)")
+    public func loadScreenGitData() async {
+        async let fetchedGitUser = loadGitUser()
+        async let fetchedFollowers = loadGitFollowers()
+        
+        // Await both requests to complete
+        let newGitUser = await fetchedGitUser
+        let newFollowers = await fetchedFollowers
+        
+        await MainActor.run {
+            self.gitUser = newGitUser
+            self.followers = newFollowers
         }
     }
     
-    public func loadGitFollowers() async {
+    public func loadGitUser() async -> GitUser? {
+        do {
+            let gitAPI = "https://api.github.com/users/ignaciojuarez"
+            let newGitUser: GitUser = try await networkService.fetch(from: gitAPI)
+            return newGitUser
+        } catch {
+            print("Error fetching user: \(error)")
+        }
+        return nil
+    }
+    
+    public func loadGitFollowers() async -> [GitUser]? {
         do {
             let followersAPI = "https://api.github.com/users/ignaciojuarez/followers"
             followers = try await networkService.fetch(from: followersAPI)
+            return followers
         } catch {
             print("Error fetching followers: \(error)")
         }
+        return nil
     }
 }
 
@@ -72,17 +90,31 @@ struct GitView: View {
     var body: some View {
         VStack {
             Text(viewModel.gitUser?.login ?? "Loading")
-            Text("followers: \(viewModel.followers.count)")
+            Text("followers: \(viewModel.followers?.count ?? 0)")
             
-            ForEach(viewModel.followers, id: \.login) { follower in
-                Text(follower.login)
+            ForEach(viewModel.followers ?? [], id: \.login) { follower in
+                followerView(name: follower.login)
             }
             
             AsyncImage(url: URL(string: viewModel.gitUser?.avatarUrl ?? ""), scale: 2)
         }
         .task {
-            await viewModel.loadGitUser()
-            await viewModel.loadGitFollowers()
+            await viewModel.loadScreenGitData()
+        }
+    }
+    
+    func followerView(name: String) -> some View {
+        ZStack {
+            Rectangle()
+                .frame(width: 350, height: 30)
+                .foregroundStyle(.gray)
+                .cornerRadius(10.0)
+            
+            HStack {
+                Text(name)
+                    .foregroundStyle(.white)
+                    .monospaced()
+            }
         }
     }
 }

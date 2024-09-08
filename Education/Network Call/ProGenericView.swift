@@ -48,11 +48,7 @@ struct ContentView: View {
         }
         .onAppear {
             Task {
-                do {
-                    //try await coffeeStore.loadOrders()
-                } catch {
-                    print(error.localizedDescription)
-                }
+                try? await coffeeStore.loadOrders()
             }
         }
     }
