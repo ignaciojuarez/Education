@@ -12,7 +12,7 @@ import Foundation
 //}
 
 // ------------------------------------
-// MARK: - How to have a thread safe class function
+// MARK: - Thread-Safe Class function
 
 // Custom Dispatch Queue aproach
 class ProfileManager {

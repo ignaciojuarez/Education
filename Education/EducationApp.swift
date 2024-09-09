@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct EducationApp: App {
+    
+    private let provider = CoreDataProvider()
+    
     var body: some Scene {
         WindowGroup {
-            GitView()
+            //GitView()
+            TestingCoreData()
+                .environment(\.managedObjectContext, CoreDataProvider.preview.viewContext)
         }
     }
 }

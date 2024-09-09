@@ -18,6 +18,9 @@
 		4F77AE5D2C82C64600D9AF21 /* GenericView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F77AE5C2C82C64600D9AF21 /* GenericView.swift */; };
 		4FE282EE2C8BDF6B00F5B47A /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE282EC2C8BDF5E00F5B47A /* Testing.swift */; };
 		4FE282F72C8D312A00F5B47A /* OldDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE282F62C8D312A00F5B47A /* OldDispatchQueue.swift */; };
+		4FE282F92C8E507E00F5B47A /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE282F82C8E507E00F5B47A /* CoreDataProvider.swift */; };
+		4FE282FD2C8E517E00F5B47A /* TodoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FE282FB2C8E517E00F5B47A /* TodoModel.xcdatamodeld */; };
+		4FE282FF2C8E86E600F5B47A /* TestingCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE282FE2C8E86E600F5B47A /* TestingCoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,7 @@
 		26CA02712C7D0A1A002BD091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26CA02742C7D0A1A002BD091 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		26CA02802C7E22B3002BD091 /* Simple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple.swift; sourceTree = "<group>"; };
+		4F02A5C62C8F583A00077677 /* Trees.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Trees.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4F68A7FE2C7EC20200131BCE /* LinkedLists.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LinkedLists.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4F77AE552C8285C800D9AF21 /* Basics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Basics.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4F77AE562C82A5EC00D9AF21 /* ProGeneric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProGeneric.swift; sourceTree = "<group>"; };
@@ -53,6 +57,9 @@
 		4FE282F32C8CCFCC00F5B47A /* DoTryCatch.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DoTryCatch.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4FE282F42C8CD92000F5B47A /* Tasks.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Tasks.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4FE282F62C8D312A00F5B47A /* OldDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldDispatchQueue.swift; sourceTree = "<group>"; };
+		4FE282F82C8E507E00F5B47A /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
+		4FE282FC2C8E517E00F5B47A /* DataMode.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataMode.xcdatamodel; sourceTree = "<group>"; };
+		4FE282FE2C8E86E600F5B47A /* TestingCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingCoreData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +109,7 @@
 		26CA026C2C7D0A19002BD091 /* Education */ = {
 			isa = PBXGroup;
 			children = (
+				4FE282FA2C8E516600F5B47A /* CoreData */,
 				4FE282F42C8CD92000F5B47A /* Tasks.playground */,
 				4FE282F32C8CCFCC00F5B47A /* DoTryCatch.playground */,
 				4FE282F22C8BEB8100F5B47A /* Concurrency.playground */,
@@ -145,8 +153,19 @@
 				4F77AE552C8285C800D9AF21 /* Basics.playground */,
 				4F68A7FE2C7EC20200131BCE /* LinkedLists.playground */,
 				4FE282EF2C8BDFBF00F5B47A /* NewProbems.playground */,
+				4F02A5C62C8F583A00077677 /* Trees.playground */,
 			);
 			path = Leetcode;
+			sourceTree = "<group>";
+		};
+		4FE282FA2C8E516600F5B47A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4FE282F82C8E507E00F5B47A /* CoreDataProvider.swift */,
+				4FE282FE2C8E86E600F5B47A /* TestingCoreData.swift */,
+				4FE282FB2C8E517E00F5B47A /* TodoModel.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +281,11 @@
 				4F77AE5B2C82C4E500D9AF21 /* Generic.swift in Sources */,
 				4F77AE592C82AAD200D9AF21 /* ProGenericView.swift in Sources */,
 				4F77AE572C82A5EC00D9AF21 /* ProGeneric.swift in Sources */,
+				4FE282F92C8E507E00F5B47A /* CoreDataProvider.swift in Sources */,
 				26CA02812C7E22B3002BD091 /* Simple.swift in Sources */,
+				4FE282FD2C8E517E00F5B47A /* TodoModel.xcdatamodeld in Sources */,
 				26CA026E2C7D0A19002BD091 /* EducationApp.swift in Sources */,
+				4FE282FF2C8E86E600F5B47A /* TestingCoreData.swift in Sources */,
 				4FE282F72C8D312A00F5B47A /* OldDispatchQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,6 +545,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4FE282FB2C8E517E00F5B47A /* TodoModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4FE282FC2C8E517E00F5B47A /* DataMode.xcdatamodel */,
+			);
+			currentVersion = 4FE282FC2C8E517E00F5B47A /* DataMode.xcdatamodel */;
+			path = TodoModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 26CA02622C7D0A19002BD091 /* Project object */;
 }

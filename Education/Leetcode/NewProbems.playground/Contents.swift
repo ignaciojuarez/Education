@@ -1,6 +1,4 @@
 
-
-
 // -----------------------------------------
 
 func ThreeLargestNumbers(arr: [Int]) -> [Int] {

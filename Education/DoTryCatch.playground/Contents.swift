@@ -29,7 +29,7 @@ do {
     time = minutes
     
 } catch {
-    throw error
+    print(error)
 }
 
 // MARK: Try? (Optional)
