@@ -15,8 +15,11 @@ struct EducationApp: App {
     var body: some Scene {
         WindowGroup {
             //GitView()
-            TestingCoreData()
-                .environment(\.managedObjectContext, CoreDataProvider.preview.viewContext)
+            
+//            TestingCoreData()
+//                .environment(\.managedObjectContext, CoreDataProvider.preview.viewContext)
+            
+            EventView()
         }
     }
 }

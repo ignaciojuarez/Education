@@ -66,4 +66,3 @@ func reverseList(_ head: Node?) -> Node? {
 }
 
 myList.head = reverseList(myList.head)!
-//myList.printLinkedList()
