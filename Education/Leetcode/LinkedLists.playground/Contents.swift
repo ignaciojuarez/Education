@@ -53,8 +53,8 @@ myList.addToHead(7)
 // MARK: - Reverse Linked List
 
 func reverseList(_ head: Node?) -> Node? {
-    var prev: Node?
     var curr = head
+    var prev: Node?
     
     while curr != nil {
         let temp = curr!.next
