@@ -83,21 +83,6 @@ func spriralMatrix(matrix: [[Int]]) -> [Int] {
     return ans
 }
 
-func canPlaceFlowers(_ flowerbed: [Int], _ n: Int) -> Bool {
-    var flowerbed = flowerbed
-    var placed = 0
-    
-    for (idx, plot) in flowerbed.enumerated() where plot != 1 {
-        let prevIdx = (idx - 1)
-        let nextIdx = (idx + 1)
-        if prevIdx >= 0, flowerbed[prevIdx] != 0 { continue }
-        if nextIdx < flowerbed.count, flowerbed[nextIdx] != 0 { continue }
-        flowerbed[idx] = 1
-        placed += 1
-    }
-    return placed >= n
-}
-
 func wordPattern(_ pattern: String, _ s: String) -> Bool {
     var map: [Character: String] = [:] //a:dog
     var words = s.split(separator: " ")
@@ -117,4 +102,21 @@ func wordPattern(_ pattern: String, _ s: String) -> Bool {
         patternIndex += 1
     }
     return map.values.count == wordsSet.count
+}
+
+class Solution {
+    func gcdOfStrings(_ str1: String, _ str2: String) -> String {
+        guard (str1 + str2) == (str2 + str1) else { return "" }
+        
+        let gcd = gcd(str1.count, str2.count)
+        return String(str1.prefix(gcd))
+    }
+
+    func gcd(_ x: Int, _ y: Int) -> Int {
+        if y == 0 {
+            return x;
+        } else {
+            return gcd(y, x % y);
+        }
+    }
 }
