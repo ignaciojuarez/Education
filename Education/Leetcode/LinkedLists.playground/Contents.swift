@@ -32,15 +32,15 @@ class LinkedList {
         tail = tail.next!
     }
     
-//    func printLinkedList(){
-//        var toPrint: String = ""
-//        var curr = head
-//        while curr != nil {
-//            toPrint += "[ \(String(curr!.val)), ]"
-//            curr = curr.next!
-//        }
-//        print(toPrint)
-//    }
+    func printLinkedList(){
+        var toPrint: String = ""
+        var curr = head
+        while curr.next != nil {
+            toPrint += "[\(String(curr.val))]"
+            curr = curr.next!
+        }
+        print(toPrint)
+    }
 }
 
 var myList = LinkedList()
@@ -48,7 +48,7 @@ myList.addToHead(10)
 myList.addToHead(8)
 myList.addToHead(6)
 myList.addToHead(7)
-//myList.printLinkedList()
+myList.printLinkedList()
 
 // MARK: - Reverse Linked List
 
