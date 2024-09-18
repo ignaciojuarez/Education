@@ -4,7 +4,7 @@ import UIKit
 let nilNumbers: [Int?] = [1,2,nil,3,4,nil,5,6,67,nil,8,9]
 let filteredNumbers = nilNumbers.compactMap{$0}
 
-// MARK: .flatmap{$0} - ([[Int]] -> [Int] and removes nil)
+// MARK: .flatMap{$0} - ([[Int]] -> [Int] and removes nil)
 let arrayOFArrays: [[Int]] = [[1,2,3], [3,4,5], [6,7,8]]
 let singleArray = arrayOFArrays.flatMap{$0}
 
