@@ -30,34 +30,34 @@ struct TaskGroup {
     var tasks: [Task]
 }
 
-class TaskViewModel: ObservableObject {
-    
-    @Published var allTasks: [Task]
-    
-    init() {
-        
-    }
-    
-    func addTask(task: Task) {
-    }
-    
-    func getSortedTasks() -> [Task] {
-        var priorityTasks: [Task] = []
-        
-        var withPriority: [Task] = allTasks.filter{$0.priority != nil}
-                                           .sorted {$0.priority!.rawValue > $1.priority!.rawValue}
-        
-        var withDate: [Task] = allTasks.sorted{$0.dueDate < $1.dueDate}
-        
-        withPriority.forEach { priorityTasks.append($0) }
-        withDate.forEach { priorityTasks.append($0) }
-        
-        for task in allTasks {
-            if priorityTasks
-        }
-        
-        
-    }
-}
+//class TaskViewModel: ObservableObject {
+//    
+//    @Published var allTasks: [Task]
+//    
+//    init() {
+//        
+//    }
+//    
+//    func addTask(task: Task) {
+//    }
+//    
+//    func getSortedTasks() -> [Task] {
+//        var priorityTasks: [Task] = []
+//        
+//        var withPriority: [Task] = allTasks.filter{$0.priority != nil}
+//                                           .sorted {$0.priority!.rawValue > $1.priority!.rawValue}
+//        
+//        var withDate: [Task] = allTasks.sorted{$0.dueDate < $1.dueDate}
+//        
+//        withPriority.forEach { priorityTasks.append($0) }
+//        withDate.forEach { priorityTasks.append($0) }
+//
+//        for task in allTasks {
+//            if priorityTasks
+//        }
+//        
+//        
+//    }
+//}
 
 

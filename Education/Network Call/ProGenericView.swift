@@ -46,10 +46,8 @@ struct ContentView: View {
         List(coffeeStore.orders, id: \.id) { order in
             Text(order.description)
         }
-        .onAppear {
-            Task {
-                try? await coffeeStore.loadOrders()
-            }
+        .task {
+            try? await coffeeStore.loadOrders()
         }
     }
 }

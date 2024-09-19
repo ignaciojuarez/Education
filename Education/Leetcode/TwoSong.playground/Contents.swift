@@ -14,9 +14,9 @@ let songTimes2 = [
   ["The Ocean", "4:31"], ["Hot Dog", "3:19"]
 ]
 
-func twoSong(songsWithTime: [String:String]) -> [String] {
+func twoSong(songsWithTime: [[String]]) -> [String] {
     
-    var dict = [String:String] = [:] //timeLookingfor : Song of the one looking for that time
+    var dict: [String:String] = [:] //timeLookingfor : Song of the one looking for that time
     
     for songWithTime in songsWithTime {
         let song = songWithTime[0]
@@ -29,6 +29,7 @@ func twoSong(songsWithTime: [String:String]) -> [String] {
         let lookingTime = calculateTimeLookingFor(time)
         dict[lookingTime] = song
     }
+    return []
 }
 
 func calculateTimeLookingFor(_ time: String) -> String {
@@ -40,7 +41,7 @@ func calculateTimeLookingFor(_ time: String) -> String {
     let lookingMinutes = 7 - (minutes - 1)
     let lookingSeconds = 60 - seconds
     
-    return("\(lookingMinutes):\(lookingSeconds)"
+    return("\(lookingMinutes):\(lookingSeconds)")
 }
            
 print(twoSong(songsWithTime: songTimes1))

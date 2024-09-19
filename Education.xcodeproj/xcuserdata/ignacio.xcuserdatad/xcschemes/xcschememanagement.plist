@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>1</integer>
 		</dict>
 		<key>Closures (Playground) 1.xcscheme</key>
 		<dict>
@@ -30,7 +30,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>8</integer>
 		</dict>
 		<key>Concurrency (Playground) 1.xcscheme</key>
 		<dict>
@@ -93,7 +93,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>0</integer>
 		</dict>
 		<key>Dates (Playground) 1.xcscheme</key>
 		<dict>
@@ -156,7 +156,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>11</integer>
 		</dict>
 		<key>DoTryCatch (Playground) 1.xcscheme</key>
 		<dict>
@@ -177,12 +177,12 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>10</integer>
 		</dict>
 		<key>Education.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>13</integer>
 		</dict>
 		<key>Filters (Playground) 1.xcscheme</key>
 		<dict>
@@ -210,7 +210,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>4</integer>
 		</dict>
 		<key>GenericStack (Playground) 1.xcscheme</key>
 		<dict>
@@ -231,7 +231,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>6</integer>
 		</dict>
 		<key>LinkedLists (Playground) 1.xcscheme</key>
 		<dict>
@@ -252,7 +252,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>2</integer>
 		</dict>
 		<key>NewProbems (Playground) 1.xcscheme</key>
 		<dict>
@@ -273,7 +273,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>9</integer>
 		</dict>
 		<key>Protocols (Playground) 1.xcscheme</key>
 		<dict>
@@ -301,7 +301,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>Tasks (Playground) 1.xcscheme</key>
 		<dict>
@@ -322,7 +322,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>7</integer>
 		</dict>
 		<key>Testing (Playground) 1.xcscheme</key>
 		<dict>
@@ -364,7 +364,12 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>5</integer>
+		</dict>
+		<key>TwoSong (Playground).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
 		</dict>
 		<key>usefulCode (Playground) 1.xcscheme</key>
 		<dict>
