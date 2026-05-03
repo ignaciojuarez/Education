@@ -23,5 +23,3 @@ let notes = [
 ]
 
 let sortedNotes = notes.sorted(by: { $0.date < $1.date })
-
-

@@ -15,11 +15,6 @@ enum HTTPError: Error {
 
 struct HTTPClient {
     
-    // get, set, delete, put
-    // more erros for HTTP error response, 401
-    // optional Decoding strategy
-    // custom headers
-    // optional URL or String
     func fetchData<T: Codable>(from urlString: String) async throws -> T {
         guard let url = URL(string: urlString) else {
             throw HTTPError.invalidURL
